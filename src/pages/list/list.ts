@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ListPage {
   selectedItem: any;
   icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  items: Array<{title: string, note: string, icon: string}>;  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
@@ -34,4 +34,20 @@ export class ListPage {
       item: item
     });
   }
+
+  lifecycle = {
+    ionViewDidLoad:0,
+    ionViewWillEnter:0,
+    ionViewDidEnter:0,        
+    ionViewWillLeave:0,
+    ionViewDidLeave:0,
+    ionViewWillUnload:0
+  };
+
+  ionViewDidLoad(){ this.lifecycle.ionViewDidLoad ++; }
+  ionViewWillEnter(){ this.lifecycle.ionViewWillEnter ++; }
+  ionViewDidEnter(){ this.lifecycle.ionViewDidEnter ++; }        
+  ionViewWillLeave(){ this.lifecycle.ionViewWillLeave ++; }
+  ionViewDidLeave(){ this.lifecycle.ionViewDidLeave ++; }
+  ionViewWillUnload(){ this.lifecycle.ionViewWillUnload ++; }
 }
